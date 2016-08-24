@@ -5,7 +5,7 @@ from lib.login import login
 import pytest
 from common.util.Md5 import Md5
 
-pytest.main("-s -v ./test/test_queryUserAddressList.py --html=./logs/report.html")
+# pytest.main("-s -v ./test/test_queryUserAddressList.py --html=./logs/report.html")
 # from common.util.logger import logger
 # from common.util.logger import console
 # from appium import webdriver
@@ -37,17 +37,17 @@ pytest.main("-s -v ./test/test_queryUserAddressList.py --html=./logs/report.html
 # pytest.main("-s -v ./test/test_template.py --html=./logs/report.html")
 #
 
-# url = "http://127.0.0.1:8000/iwaterMock/v1/user/nt/login/v1.json"
+url = "http://127.0.0.1:8000/iwaterMock/v1/user/nt/login/v1.json"
 # url = "http://123.57.47.236:8091/v1/user/nt/login/v1.json"
 # url = "http://101.200.219.159:8081/iwaterMock/v1/user/nt/login/v1.json"
 # url = "http://192.168.1.231:18088/iwaterMock/v1/user/nt/login/v1.json"
-# password=Md5.md5("123456789")
-# data = {'requestPara': simplejson.dumps({'userName': '13693019506', 'password': password})}
+password=Md5.md5("123456789")
+data = {'requestPara': simplejson.dumps({'userName': '13693019506', 'password': password})}
 # data = {'requestPara': simplejson.dumps({'userName': '13693019506', 'password': password})}
 # print(type(data))
 # print(data)
 # headers={'Content-type':"application/x-www-form-urlencode"}
 # resp = requests.post(url=url,data=data ,headers=headers)
-# resp = requests.post(url=url, data=data)
-# content = resp.content
-# print(resp.content.decode("utf-8"))
+resp = requests.post(url=url, data=data)
+content = resp.content
+print(resp.content.decode("utf-8"))
